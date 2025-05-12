@@ -1,14 +1,12 @@
 import xml.etree.ElementTree as ET
 import matplotlib.pyplot as plt
 
-# 文件名列表和协议名映射
 files = {
     "results/dsdv-results.xml": "DSDV",
     "results/aodv-results.xml": "AODV",
     "results/zrp-results.xml": "ZRP"
 }
 
-# 结果容器
 avg_delay = {}
 avg_throughput = {}
 packet_loss_rate = {}
@@ -45,7 +43,6 @@ for file, label in files.items():
     packet_loss_rate[label] = 1 - (total_rx_packets / total_tx_packets) if total_tx_packets > 0 else 1.0
 
 
-# 画图函数
 def plot_metric(metric_dict, title, ylabel):
     protocols = list(metric_dict.keys())
     values = list(metric_dict.values())
@@ -57,8 +54,6 @@ def plot_metric(metric_dict, title, ylabel):
     plt.grid(axis='y')
     plt.show()
 
-
-# 绘图展示
 plot_metric(avg_delay, "Average End-to-End Delay", "Delay (ms)")
 plot_metric(avg_throughput, "Average Throughput", "Throughput (Mbps)")
 plot_metric(packet_loss_rate, "Packet Loss Rate", "Loss Rate")
