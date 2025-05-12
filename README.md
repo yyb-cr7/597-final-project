@@ -89,5 +89,4 @@ python analyze_results.py
 ## ✍️ Author
 
 Fucheng Zhu, Yanbo Yang
-Project: *Comparative Study of DSDV, ZRP, and AODV in Multihop Mesh Networks*
 
